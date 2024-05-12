@@ -1,0 +1,21 @@
+# version: '3.8'
+# services:
+#   edit:
+#     image: whoatemyapplepie/golang:1.22.2-bullseye
+#     build:
+#       context: edit
+#       args:
+#         - USERNAME=${USERNAME}
+#         - GROUPNAME=${GROUPNAME}
+#     volumes:
+#       - ../:/home/${USERNAME}/
+#     user: "${UID}:${GID}"
+#     tty: true
+
+services:
+  go_app:
+    build: .
+    container_name: go_dev_container
+    volumes:
+      - .:/home/vscode/go/src/app
+    tty: true
