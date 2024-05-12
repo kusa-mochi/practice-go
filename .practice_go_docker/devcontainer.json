@@ -26,7 +26,7 @@
 
 {
 	"name": "Go Development",
-	"dockerFile": "Dockerfile",
+	"dockerFile": "practice_go_edit/Dockerfile",
 	"service": "go_app",
 	"workspaceFolder": "/home/mochi/go/src/app",
 	"settings": {

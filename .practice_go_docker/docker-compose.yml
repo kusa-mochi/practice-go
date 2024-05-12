@@ -15,14 +15,14 @@
 services:
   go_app:
     build:
-      context: .
+      context: practice_go_edit
       dockerfile: Dockerfile
       args:
         - USERNAME=${USERNAME}
         - UID=${UID}
         - GROUPNAME=${GROUPNAME}
         - GID=${GID}
-    container_name: go_dev_container
+    container_name: practice_go_edit
     volumes:
-      - .:/home/${USERNAME}/go/src/app
+      - ../:/home/${USERNAME}/go/src/app
     tty: true
