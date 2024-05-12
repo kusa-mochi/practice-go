@@ -28,7 +28,7 @@
 	"name": "Go Development",
 	"dockerFile": "Dockerfile",
 	"service": "go_app",
-	"workspaceFolder": "/home/vscode/go/src/app",
+	"workspaceFolder": "/home/mochi/go/src/app",
 	"settings": {
 	  "terminal.integrated.shell.linux": "/bin/bash"
 	},

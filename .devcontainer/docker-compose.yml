@@ -14,8 +14,15 @@
 
 services:
   go_app:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - USERNAME=${USERNAME}
+        - UID=${UID}
+        - GROUPNAME=${GROUPNAME}
+        - GID=${GID}
     container_name: go_dev_container
     volumes:
-      - .:/home/vscode/go/src/app
+      - .:/home/${USERNAME}/go/src/app
     tty: true

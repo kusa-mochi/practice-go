@@ -14,18 +14,22 @@
 # WORKDIR /home/${USERNAME}/
 # CMD [ "/bin/bash" ]
 
-# Go言語の公式イメージをベースにする
-FROM golang:latest
+FROM golang:1.22.2-bullseye
+
+ARG USERNAME=mochi
+ARG GROUPNAME=mochi
+ARG UID=1000
+ARG GID=1000
 
 # 非ルートユーザーを作成する
-RUN groupadd -g 1000 vscode && \
-    useradd -u 1000 -g vscode -m vscode -s /bin/bash
+RUN groupadd -g ${GID} ${GROUPNAME} && \
+    useradd -u ${UID} -g ${GROUPNAME} -m ${USERNAME} -s /bin/bash
 
 # ユーザーを切り替える
-USER vscode
+USER ${USERNAME}
 
 # ワーキングディレクトリを設定
-WORKDIR /home/vscode/go/src/app
+WORKDIR /home/${USERNAME}/go/src/app
 
 # 必要なライブラリやツールのインストールなど、追加のセットアップがあればここに記述する
 
