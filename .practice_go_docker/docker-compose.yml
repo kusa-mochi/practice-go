@@ -1,5 +1,6 @@
 services:
   go_app:
+    image: whoatemyapplepie/practice-go:1.22.2-bullseye
     build:
       context: practice_go_edit
       dockerfile: Dockerfile
